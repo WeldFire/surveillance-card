@@ -163,20 +163,6 @@ class SurveillanceCard extends LitElement {
         display: flex;
         align-items: stretch;
         position: absolute;
-<<<<<<< HEAD
-      }
-
-      .thumbs {
-        flex: 1;
-        overflow-y: auto;
-        position: relative;
-      }
-
-      .thumb > img {
-        width: 100%;
-        height: auto;
-        min-height: 22px;
-=======
         background: var(--primary-background-color);
         flex-direction: column;
         justify-content: space-evenly;
@@ -184,14 +170,14 @@ class SurveillanceCard extends LitElement {
 
       .thumbs {
         display: inline-flex;
-        position:relative;
+        position: relative;
         justify-content: center;
+        overflow: overlay;
         margin: 1em;
       }
 
       .thumb > img {
         width: auto;
->>>>>>> c888592... horizontal layout of the thumbnails
         border: 1px solid var(--primary-color);
       }
 
@@ -217,7 +203,7 @@ class SurveillanceCard extends LitElement {
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        padding: 1em;
+        padding: 0 1em 1em;
       }
 
       .mainImage > img {
