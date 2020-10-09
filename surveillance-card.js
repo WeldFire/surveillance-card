@@ -137,7 +137,7 @@ class SurveillanceCard extends LitElement {
     if (this.selectedCamera !== camera) {
       this.selectedCamera = camera;
       //Need a better way to do this
-      let selectedCameraContainer = document.getElementById("live-view").;
+      let selectedCameraContainer = document.getElementById("live-view");
       if(selectedCameraContainer){
         selectedCameraContainer.style = "display: none;";
       }
