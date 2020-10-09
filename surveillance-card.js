@@ -170,8 +170,6 @@ class SurveillanceCard extends LitElement {
 
       .thumbs {
         display: inline-flex;
-        position: relative;
-        justify-content: center;
         overflow: overlay;
         margin: 1em;
       }
