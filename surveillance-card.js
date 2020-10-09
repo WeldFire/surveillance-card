@@ -24,7 +24,7 @@ class SurveillanceCard extends LitElement {
             })}
         </div>
         <div class="mainImage">
-          <img src="${this.selectedCamera.stream_url}" alt="${this.selectedCamera.name}" style="display: ${this.selectedCamera.display};" onload="this.style.display=''"/>
+          <img src="${this.selectedCamera.stream_url}" alt="${this.selectedCamera.name}" @style="${'display: ' + this.selectedCamera.display + ";"}" onload="this.style.display=''"/>
         </div>
       </div>
     `;
