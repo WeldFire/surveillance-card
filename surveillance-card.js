@@ -208,7 +208,7 @@ class SurveillanceCard extends LitElement {
 
       .mainImage > img {
         display: inline-block;
-        max-width: 100%;
+        object-fit: contain;
         height: 100%;
       }
 
