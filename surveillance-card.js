@@ -18,7 +18,7 @@ class SurveillanceCard extends LitElement {
 
               return html`
                 <div class="${thumbClass}" @click="${() => this._updateSelectedCamera(camera)}">
-                  <img src="${camera.url}" alt="${camera.name}" />
+                  <img src="${camera.url}" alt="${camera.name}" onerror="this.parentElement.style.display='none'" onload="this.parentElement.style.display=''" />
                 </div>
               `;
             })}
