@@ -171,7 +171,7 @@ class SurveillanceCard extends LitElement {
       .thumbs {
         display: inline-flex;
         overflow: overlay;
-        margin: 1em;
+        margin: 0.1em;
       }
 
       .thumb > img {
@@ -209,7 +209,7 @@ class SurveillanceCard extends LitElement {
       .mainImage > img {
         display: inline-block;
         max-width: 100%;
-        max-height: 100%;
+        height: 100%;
       }
 
       .loading {
