@@ -183,6 +183,8 @@ class SurveillanceCard extends LitElement {
 
       .thumb {
         padding: 2px 4px;
+        min-width: 300px;
+        margin-bottom: 15px;
       }
 
       .thumb.motion > img {
