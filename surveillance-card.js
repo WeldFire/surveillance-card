@@ -24,7 +24,7 @@ class SurveillanceCard extends LitElement {
             })}
         </div>
         <div class="mainImage">
-          <img src="${this.selectedCamera.stream_url}" alt="${this.selectedCamera.name}" @style="${'display: ' + this.selectedCamera.display + ";"}" onload="this.style.display=''"/>
+          <img id="live-view" src="${this.selectedCamera.stream_url}" alt="${this.selectedCamera.name}" onload="this.style.display=''"/>
         </div>
       </div>
     `;
@@ -82,7 +82,6 @@ class SurveillanceCard extends LitElement {
         last_motion: now,
         last_update: now,
         stream_url: "",
-        display: "none",
         url: attributes && attributes.entity_picture,
       };
     });
@@ -137,7 +136,8 @@ class SurveillanceCard extends LitElement {
 
     if (this.selectedCamera !== camera) {
       this.selectedCamera = camera;
-      this.selectedCamera.display = "none";
+      //Need a better way to do this
+      document.getElementById("live-view").style = "display: none;";
     }
   }
 
