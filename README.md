@@ -8,7 +8,7 @@ Custom component for lovelace to be used as a panel for viewing security cameras
 
 | Name | Type | Description | Default
 | ---- | ---- | ----------- | -------
-| type | string | `custom:weld-surveillance-card` | **Required**
+| type | string | `custom:surveillance-card` | **Required**
 | cameras | list | _See camera section below_ | **Required**
 | thumb_interval | number | Update interval for thumbnails in seconds (_min_ 0.5) | 10
 | update_interval | number | Update interval for main image in seconds (_min_ 0.5) | 1
@@ -27,7 +27,7 @@ Each entry in the camera list takes the following options
 
 ### Step 1
 
-Install `weld-surveillance-card` by copying `weld-surveillance-card.js`from this repo to `<config directory>/www/` on your Home Assistant instance.
+Install `surveillance-card` by copying `surveillance-card.js`from this repo to `<config directory>/www/` on your Home Assistant instance.
 
 **Example:**
 
