@@ -38,10 +38,7 @@ class SurveillanceCard extends LitElement {
             })}
         </div>
         <div class="mainImage">
-          <img id="live-view" src="${this.selectedCamera.stream_url}" alt="${this.selectedCamera.name}" @onload="${() => this.hideOnLoad = false}" 
-          ${this.hideOnLoad ? 
-            html`style="display: none;"` :
-            html`style=""`}/>
+          <img src="${this.selectedCamera.stream_url}" alt="${this.selectedCamera.name}" />	
         </div>
       </div>
     `;
@@ -53,7 +50,6 @@ class SurveillanceCard extends LitElement {
       cameras: { type: Array },
       selectedCamera: { type: Object },
       focusOnMotion: { type: Boolean },
-      hideOnLoad: { type: Boolean },
       thumbInterval: { type: Number },
       updateInterval: { type: Number },
       recordingDuration: { type: Number },
@@ -162,7 +158,6 @@ class SurveillanceCard extends LitElement {
 
     if (this.selectedCamera !== camera) {
       this.selectedCamera = camera;
-      this.hideOnLoad = true;
     }
   }
 
@@ -213,7 +208,6 @@ class SurveillanceCard extends LitElement {
         align-items: stretch;
         position: absolute;
         background: var(--primary-background-color);
-        flex-direction: column;
         justify-content: space-evenly;
       }
 
