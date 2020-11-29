@@ -16,23 +16,14 @@ class SurveillanceCard extends LitElement {
     if (screenWidth<520) screenSizeClass = "tinyScreen";
     else if(screenWidth<1000) screenSizeClass = "smallScreen";
 
-    // Capture functionality not available in HA iOS and Android apps
-    const showToolbarClass = ( !this.isMobileApp && this.showCaptureButtons ) ? "" : "hidden";
-
     return html`
       <div class="container">
         <div class="thumbs">
           ${this.cameras.filter((c) => c.access_token).map((camera) => {
               let thumbClass = camera.has_motion ? "thumb motion" : "thumb";
-              let toolbarClass = this.showCaptureButtons ? "" : "hidden";
-
               return html`
                 <div class="${thumbClass}" @click="${() => this._updateSelectedCamera(camera)}">
                   <img src="${camera.url}" alt="${camera.name}" onerror="this.parentElement.style.display='none'" onload="this.parentElement.style.display=''" />
-                </div>
-                <div class="toolbar ${showToolbarClass} ${screenSizeClass}" >
-                  <a target="_blank" class="snapshot" href="${camera.url}" download="${camera.name.replace(' ','_')+"_"+ new Date().toISOString()+".jpg"}"></a>
-                  <a class="record" @click="${(clickEvent) => this._recordSequence(clickEvent)}"></a>
                 </div>
               `;
             })}
@@ -227,7 +218,6 @@ class SurveillanceCard extends LitElement {
       .thumb {
         padding: 2px 4px;
         min-width: 300px;
-        margin-bottom: 15px;
       }
 
       .thumb.motion > img {
@@ -261,32 +251,6 @@ class SurveillanceCard extends LitElement {
         text-align: center;
         font-size: 1.2rem;
         margin-top: 3rem;
-      }
-
-      .toolbar{
-        overflow: hidden;
-        position: relative;
-        left: 50%;
-        margin-left: -65px;
-        width: 132px;
-        height: 62px;
-        bottom: 78px;
-        margin-bottom: -62px;
-      }
-
-      .toolbar.smallScreen{
-        bottom: 30px;
-        width: auto;
-        left: auto;
-        margin: 0px 0px -30px;
-      }
-
-      .toolbar.tinyScreen{
-        bottom: 0;
-        height: 150px;
-        width: auto;
-        margin: 6px 0;
-        left:0;
       }
 
       .snapshot{
